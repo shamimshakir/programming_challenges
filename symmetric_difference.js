@@ -2,6 +2,8 @@ function sym(...args) {
     /*
     Symmetric difference (commonly denoted by Δ) of two sets is the set of elements 
     which are in either of the two sets, but not in both.
+    
+    Symmetric difference কে Δ (ডেল্টা) দিয়ে প্রকাশ করা হয়, অর্থাৎ সেট A এবং সেট B এর মধ্যে যে এলিমেন্টগুলো উভয়ের মধ্যেই কমন নয় সেইগুলো 
 
     For example, sym([1, 2, 3], [5, 2, 1, 4]) should return [3, 4, 5].
 
