@@ -1,3 +1,4 @@
+// array like stack
 function Stack() {
   var collection = [];
   this.print = function() {
