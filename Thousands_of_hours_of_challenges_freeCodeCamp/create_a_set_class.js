@@ -12,24 +12,28 @@ class Set {
     return Object.keys(this.dictionary);
   }
 
-  add(item){
-    if(!this.dictionary.hasOwnProperty(item)){
-        this.dictionary[item] = item
-        return true
+  add(element) {
+    if (!this.has(element)) {
+      this.dictionary[element] = true;
+      this.length++;
+      return true;
     }
+
     return false;
   }
 
-  remove(rItem){
-    if(this.dictionary.hasOwnProperty(rItem)){
-        delete this.dictionary[rItem]
-        return true
+  remove(element) {
+    if (this.has(element)) {
+      delete this.dictionary[element];
+      this.length--;
+      return true;
     }
-    return false
+
+    return false;
   }
 
-  size(){
-    return Object.keys(this.dictionary).length
+  size() {
+    return this.length;
   }
 }
 
