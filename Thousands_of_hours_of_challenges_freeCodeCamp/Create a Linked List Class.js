@@ -31,6 +31,23 @@ function LinkedList() {
     length++;
     // Only change code above this line
   };
+  
+    this.remove = function(element){
+    let temp = head;
+    if(element == temp.element){
+      head = temp.next
+      return length--;
+    }else{
+      while(temp.next !== null){
+        if(temp.next.element === element){
+          temp.next = temp.next.next
+          return length--;
+        }
+        temp = temp.next;
+      }
+    }
+  };
+  
 }
 
 let list = new LinkedList()
