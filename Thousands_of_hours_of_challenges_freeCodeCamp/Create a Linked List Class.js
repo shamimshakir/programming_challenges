@@ -32,7 +32,7 @@ function LinkedList() {
     // Only change code above this line
   };
   
-    this.remove = function(element){
+  this.remove = function(element){
     let temp = head;
     if(element == temp.element){
       head = temp.next
@@ -47,10 +47,12 @@ function LinkedList() {
       }
     }
   };
+  
   // Only change code below this line
   this.isEmpty = function(){
     return this.size() === 0
   }
+  
   this.indexOf = function(element){
     let temp = head;
     let index = 0;
@@ -63,6 +65,7 @@ function LinkedList() {
     }
     return -1
   }
+  
   this.elementAt = function(index){
     let count = 0;
     let current = head;
@@ -75,6 +78,37 @@ function LinkedList() {
     }
     return undefined
   }
+  
+  
+  // Only change code below this line
+  this.removeAt = function(index){
+    if(index < 0 || index >= this.size()){
+      return null;
+    }
+    if(index === 0 || this.size() === 1){
+      let temp = head.element
+      head = head.next;
+      length--;
+      return temp
+    }else{
+      let prev = head;
+      let current = head.next;
+      let count = 1;
+
+      while(current.next !== null){
+        if(index === count){
+          let temp = current.element;
+          prev.next = current.next;
+          length--;
+          return temp
+        }
+        count++;
+        prev = current;
+        current = current.next
+      }
+    }
+  }
+  // Only change code above this line
   
 }
 
