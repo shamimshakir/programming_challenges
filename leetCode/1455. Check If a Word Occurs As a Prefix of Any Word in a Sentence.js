@@ -18,3 +18,17 @@ var isPrefixOfWord = function(sentence, searchWord) {
     }
     return -1
 };
+
+
+
+// Second solution
+var isPrefixOfWord = function(sentence, searchWord) {
+    let sen = sentence.split(' ')
+    for(let i = 0; i < sen.length; i++){
+      let word = sen[i]
+      if(word.startsWith(searchWord)){
+          return i+1
+      }
+    }
+    return -1
+};
