@@ -33,6 +33,30 @@ function BinarySearchTree() {
       }
     }
   }
+  
+  
+  this.findMin = function(){
+    if(this.root === null)return null;
+    let current = this.root
+    while(current){
+      if(current.left === null){
+        return current.value
+      }
+      current = current.left
+    }
+  }
+  this.findMax = function(){
+    if(this.root === null)return null;
+    let current = this.root;
+    while(current){
+      if(current.right === null){
+        return current.value;
+      }
+      current = current.right
+    }
+  }
+  
+  
 
 }
 
