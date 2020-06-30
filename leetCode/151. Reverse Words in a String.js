@@ -8,3 +8,9 @@
 var reverseWords = function(s) {
  return  s.split(' ').reverse().join(' ').trim().replace(/\s{2,}/g, ' ')
 };
+
+
+//solution two with filter
+var reverseWords = function(s) {
+    return s.split(' ').filter(el => !!el ).reverse().join(' ')
+};
