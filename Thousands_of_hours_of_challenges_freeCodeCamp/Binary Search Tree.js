@@ -56,7 +56,22 @@ function BinarySearchTree() {
     }
   }
   
-  
+  //Check if an Element is Present in a Binary Search Tree
+  this.isPresent = function(elem){
+    if(this.root === null)return false;
+    let current = this.root;
+    while(true){
+      if(elem === current.value)return true;
+      if(elem < current.value){
+        if(current.left === null)return false;
+        current = current.left
+      }
+      if(elem > current.value){
+        if(current.right === null)return false;
+        current = current.right
+      }
+    }
+  }
 
 }
 
