@@ -1,17 +1,19 @@
 /**
- * @param {string} s
+ * @param {number[]} nums
  * @return {number}
  */
-var lengthOfLastWord = function(s) {
-    let len = 0;
-    s = s.trim()
-    for(let i = s.length - 1; i >= 0; --i){
-        if(s[i] !== ' '){
-            len++;
-        }
-        if(s[i] === ' '){
-            break;
-        }
+var missingNumber = function(nums) {
+    let max = Math.max(...nums)
+    
+    let allNumbs = [];
+    for(let i = 0; i <= max; i++){
+      allNumbs.push(i)
     }
-    return len;
+    
+    for(let num of allNumbs){
+      if(!nums.includes(num)){
+        return num;
+      }
+    }
+    return allNumbs.pop()+1;
 };
